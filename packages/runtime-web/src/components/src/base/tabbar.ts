@@ -80,7 +80,8 @@ export class Tabbar extends BaseElement {
   }
 
   firstUpdated() {
-    this.tabBarList = this.conf.items.map((item) => {
+    this.conf.items=this.conf.items||this.conf.list;
+    this.tabBarList = this.conf.items?.map((item) => {
       item.pagePath = this.addLeadingSlash(item.pagePath)
       return item
     })
